@@ -1,11 +1,14 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import DetailPanel from './components/DetailPanel';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import SoundsTable from './components/SoundsTable';
+import ReferencesTable from './components/ReferencesTable';
 import Typography from '@material-ui/core/Typography';
 import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
@@ -34,37 +37,23 @@ class SongDetailsDialog extends React.Component {
                     </DialogTitle>
                     <DialogContent dividers>
                         <Grid container direction='column' spacing={2}>
-                            <Grid item container direction='column' spacing={2}>
-                                <Grid item>
-                                    <Typography
-                                        variant='overline'
-                                        className={classes.text}
-                                    >
-                                        Sounds & Instruments
-                                    </Typography>
-                                </Grid>
-                                <Grid item>{/* SoundsTable */}</Grid>
-                            </Grid>
                             <Grid item>
                                 <Typography className={classes.text}>
                                     This is a sample description. Not much will
                                     be here.
                                 </Typography>
                             </Grid>
-                            <Grid item container direction='column' spacing={2}>
-                                <Grid item>
-                                    <Typography
-                                        variant='overline'
-                                        className={classes.text}
-                                    >
-                                        Lyrics
-                                    </Typography>
-                                </Grid>
-                                <Grid item>
-                                    <Typography className={classes.text}>
-                                        {/* Lyrics */}
-                                    </Typography>
-                                </Grid>
+                            <Grid item>
+                                <DetailPanel
+                                    title='Sounds & Instruments'
+                                    component={<SoundsTable />}
+                                />
+                            </Grid>
+                            <Grid item>
+                                <DetailPanel
+                                    title='References'
+                                    component={<ReferencesTable />}
+                                />
                             </Grid>
                         </Grid>
                     </DialogContent>
