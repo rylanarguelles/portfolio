@@ -7,8 +7,7 @@ import { withStyles } from '@material-ui/styles';
 const styles = (theme) => ({
     navItem: {
         color: grey[50],
-        fontFamily: 'Butler',
-        fontWeight: 'bold',
+        fontFamily: 'Berthold Akzidenz Grotesk',
         cursor: 'pointer',
     },
 });
