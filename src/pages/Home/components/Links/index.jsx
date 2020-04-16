@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import MailIcon from '@material-ui/icons/Mail';
 import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
 
@@ -43,6 +44,11 @@ class Links extends React.Component {
                 <Grid item>
                     <IconButton className={classes.icon}>
                         <InstagramIcon />
+                    </IconButton>
+                </Grid>
+                <Grid item>
+                    <IconButton className={classes.icon}>
+                        <MailIcon />
                     </IconButton>
                 </Grid>
             </Grid>

@@ -38,10 +38,10 @@ class WorkExperience extends React.Component {
                         </Grid>
                         <Grid item>
                             <Typography
-                                variant='caption'
+                                variant='overline'
                                 className={classes.text}
                             >
-                                UNILEVER 2019
+                                Unilever 2019
                             </Typography>
                         </Grid>
                     </Grid>
@@ -53,10 +53,10 @@ class WorkExperience extends React.Component {
                         </Grid>
                         <Grid item>
                             <Typography
-                                variant='caption'
+                                variant='overline'
                                 className={classes.text}
                             >
-                                QWIKWIRE BILLING SYSTEMS, INC. 2019
+                                Qwikwire Billing Systems, Inc.
                             </Typography>
                         </Grid>
                     </Grid>

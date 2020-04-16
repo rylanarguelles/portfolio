@@ -38,10 +38,10 @@ class Education extends React.Component {
                         </Grid>
                         <Grid item>
                             <Typography
-                                variant='caption'
+                                variant='overline'
                                 className={classes.text}
                             >
-                                UNIVERSITY OF TECHNOLOGY SYDNEY 2022
+                                University of Technology Sydney 2022
                             </Typography>
                         </Grid>
                     </Grid>
@@ -53,10 +53,10 @@ class Education extends React.Component {
                         </Grid>
                         <Grid item>
                             <Typography
-                                variant='caption'
+                                variant='overline'
                                 className={classes.text}
                             >
-                                DE LA SALLE UNIVERSITY MANILA 2019
+                                De La Salle University Manila 2019
                             </Typography>
                         </Grid>
                     </Grid>
