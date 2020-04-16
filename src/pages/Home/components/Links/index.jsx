@@ -28,24 +28,38 @@ class Links extends React.Component {
                 className={classes.root}
             >
                 <Grid item>
-                    <IconButton className={classes.icon}>
-                        <LinkedInIcon />
-                    </IconButton>
+                    <a
+                        href='https://www.linkedin.com/in/rylanarguelles/'
+                        target='_blank'
+                    >
+                        <IconButton className={classes.icon}>
+                            <LinkedInIcon />
+                        </IconButton>
+                    </a>
                 </Grid>
                 <Grid item>
-                    <IconButton className={classes.icon}>
-                        <GithubIcon />
-                    </IconButton>
+                    <a href='https://github.com/rylanarguelles' target='_blank'>
+                        <IconButton className={classes.icon}>
+                            <GithubIcon />
+                        </IconButton>
+                    </a>
                 </Grid>
                 <Grid item>
-                    <IconButton className={classes.icon}>
-                        <InstagramIcon />
-                    </IconButton>
+                    <a
+                        href='https://www.instagram.com/rylanarguelles/'
+                        target='_blank'
+                    >
+                        <IconButton className={classes.icon}>
+                            <InstagramIcon />
+                        </IconButton>
+                    </a>
                 </Grid>
                 <Grid item>
-                    <IconButton className={classes.icon}>
-                        <MailIcon />
-                    </IconButton>
+                    <a href='mailto:rylanarguelles@gmail.com'>
+                        <IconButton className={classes.icon}>
+                            <MailIcon />
+                        </IconButton>
+                    </a>
                 </Grid>
             </Grid>
         );
