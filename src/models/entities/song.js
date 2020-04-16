@@ -19,6 +19,8 @@ export default class Song {
 
     uploadDate;
 
+    url;
+
     constructor(song) {
         this.id = song.id;
         this.title = song.title;
@@ -26,6 +28,7 @@ export default class Song {
         this.description = song.description;
         this.lyrics = song.lyrics;
         this.uploadDate = song.uploadDate;
+        this.url = song.url;
 
         let sounds = [];
         let references = [];
@@ -47,4 +50,5 @@ decorate(Song, {
     lyrics: observable,
     references: observable,
     uploadDate: observable,
+    url: observable,
 });
