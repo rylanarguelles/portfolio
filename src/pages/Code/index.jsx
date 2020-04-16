@@ -1,8 +1,10 @@
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 import Grid from '@material-ui/core/Grid';
 import ProjectCard from './components/ProjectCard';
+import ProjectDetailsDialog from './components/ProjectDetailsDialog';
 
-export default class Code extends React.Component {
+class Code extends React.Component {
     constructor(props) {
         super(props);
 
@@ -22,6 +24,8 @@ export default class Code extends React.Component {
     }
 
     render() {
+        const { CodeStore } = this.props;
+        const { activeProject } = CodeStore;
         return (
             <Grid container direction='row' spacing={4} justify='flex-start'>
                 <Grid item>
@@ -42,7 +46,14 @@ export default class Code extends React.Component {
                 <Grid item>
                     <ProjectCard openDialog={this.toggleProjectDetailsDialog} />
                 </Grid>
+                <ProjectDetailsDialog
+                    activeProject={activeProject}
+                    isOpen={this.state.detailsIsOpen}
+                    close={this.toggleProjectDetailsDialog}
+                />
             </Grid>
         );
     }
 }
+
+export default inject('CodeStore')(observer(Code));
