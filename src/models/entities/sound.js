@@ -1,7 +1,6 @@
 import { decorate, observable } from 'mobx';
 
 export default class Sound {
-    id;
 
     instrument;
 
@@ -10,7 +9,6 @@ export default class Sound {
     live;
 
     constructor(sound) {
-        this.id = sound.id;
         this.instrument = sound.instrument;
         this.effects = sound.effects;
         this.live = sound.live;
@@ -18,7 +16,6 @@ export default class Sound {
 }
 
 decorate(Sound, {
-    id: observable,
     instrument: observable,
     effects: observable,
     live: observable,
