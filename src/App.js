@@ -1,5 +1,6 @@
 import React from 'react';
 import Divider from '@material-ui/core/Divider';
+import Code from './pages/Code';
 import Home from './pages/Home';
 import Music from './pages/Music';
 import Navigation from './components/universal/Navigation';
@@ -29,6 +30,7 @@ class App extends React.Component {
                     <br></br>
                     <Route path='/home' component={Home} />
                     <Route path='/music' component={Music} />
+                    <Route path='/code' component={Code} />
                     <Redirect exact from='' to='/home' />
                 </div>
             </Router>
