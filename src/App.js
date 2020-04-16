@@ -10,7 +10,7 @@ const styles = (theme) => ({
     root: {
         height: '100vh',
         padding: '64px',
-        backgroundColor: grey[900],
+        backgroundColor: grey[50],
     },
 });
 

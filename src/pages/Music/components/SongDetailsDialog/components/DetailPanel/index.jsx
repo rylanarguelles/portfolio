@@ -9,14 +9,15 @@ import { withStyles } from '@material-ui/styles';
 
 const styles = (theme) => ({
     panel: {
-        backgroundColor: grey[700],
+        backgroundColor: grey[300],
     },
     text: {
-        color: grey[50],
-        fontFamily: 'Neue Haas Grotesk Text Pro',
+        color: grey[900],
+        fontFamily: 'Butler',
+        fontWeight: 'bold',
     },
     icon: {
-        color: grey[50],
+        color: grey[900],
     },
 });
 

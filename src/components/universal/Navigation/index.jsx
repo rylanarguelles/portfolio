@@ -1,13 +1,14 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import grey from '@material-ui/core/colors/grey';
+import red from '@material-ui/core/colors/red';
 import { withStyles } from '@material-ui/styles';
 
 const styles = (theme) => ({
     navItem: {
-        color: grey[50],
-        fontFamily: 'Berthold Akzidenz Grotesk',
+        color: red[800],
+        fontFamily: 'Butler',
+        fontWeight: 'bold',
         cursor: 'pointer',
     },
 });

@@ -13,14 +13,15 @@ import { withStyles } from '@material-ui/styles';
 const styles = (theme) => ({
     card: {
         width: 240,
-        backgroundColor: grey[800],
+        backgroundColor: grey[200],
     },
     text: {
-        color: grey[50],
-        fontFamily: 'Neue Haas Grotesk Text Pro',
+        color: grey[900],
+        fontFamily: 'Butler',
+        fontWeight: 'bold',
     },
     icon: {
-        color: grey[50],
+        color: grey[900],
     },
 });
 

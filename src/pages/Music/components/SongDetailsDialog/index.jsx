@@ -10,16 +10,23 @@ import Paper from '@material-ui/core/Paper';
 import SoundsTable from './components/SoundsTable';
 import ReferencesTable from './components/ReferencesTable';
 import Typography from '@material-ui/core/Typography';
+import red from '@material-ui/core/colors/red';
 import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
 
 const styles = (theme) => ({
     details: {
-        backgroundColor: grey[800],
+        backgroundColor: grey[200],
+    },
+    title: {
+        color: red[800],
+        fontFamily: 'Butler',
+        fontWeight: 'bold',
     },
     text: {
-        color: grey[50],
-        fontFamily: 'Neue Haas Grotesk Text Pro',
+        color: grey[900],
+        fontFamily: 'Butler',
+        fontWeight: 'bold',
     },
     icon: {
         color: grey[50],
@@ -32,8 +39,10 @@ class SongDetailsDialog extends React.Component {
         return (
             <Dialog maxWidth='sm' fullWidth open={isOpen} onClose={close}>
                 <Paper className={classes.details}>
-                    <DialogTitle className={classes.text}>
-                        Paperback Writer
+                    <DialogTitle>
+                        <Typography variant='h4' className={classes.title}>
+                            Paperback Writer
+                        </Typography>
                     </DialogTitle>
                     <DialogContent dividers>
                         <Grid container direction='column' spacing={2}>

@@ -9,8 +9,9 @@ const styles = (theme) => ({
         width: 360,
     },
     text: {
-        color: grey[50],
-        fontFamily: 'Neue Haas Grotesk Text Pro',
+        color: grey[900],
+        fontFamily: 'Butler',
+        fontWeight: 'bold',
     },
 });
 

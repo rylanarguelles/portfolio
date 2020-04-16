@@ -12,12 +12,8 @@ const styles = (theme) => ({
     root: {
         width: 360,
     },
-    text: {
-        color: grey[50],
-        fontFamily: 'Neue Haas Grotesk Text Pro',
-    },
     icon: {
-        color: grey[50],
+        color: grey[900],
     },
 });
 

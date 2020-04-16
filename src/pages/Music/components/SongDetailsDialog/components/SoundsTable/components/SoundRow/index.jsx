@@ -7,8 +7,9 @@ import { withStyles } from '@material-ui/styles';
 
 const styles = (theme) => ({
     text: {
-        color: grey[50],
-        fontFamily: 'Neue Haas Grotesk Text Pro',
+        color: grey[900],
+        fontFamily: 'Butler',
+        fontWeight: 'bold',
     },
 });
 
