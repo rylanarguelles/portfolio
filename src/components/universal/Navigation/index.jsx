@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import { withStyles } from '@material-ui/styles';
+import { Link } from 'react-router-dom';
 
 const styles = (theme) => ({
     navItem: {
@@ -10,6 +11,9 @@ const styles = (theme) => ({
         fontFamily: 'Butler',
         fontWeight: 'bold',
         cursor: 'pointer',
+    },
+    link: {
+        textDecoration: 'none',
     },
 });
 
@@ -26,24 +30,32 @@ class Navigation extends React.Component {
                 <Grid item>
                     <Grid container direction='row' spacing={4}>
                         <Grid item>
-                            <Typography className={classes.navItem}>
-                                Home
-                            </Typography>
+                            <Link to='/home' className={classes.link}>
+                                <Typography className={classes.navItem}>
+                                    Home
+                                </Typography>
+                            </Link>
                         </Grid>
                         <Grid item>
-                            <Typography className={classes.navItem}>
-                                Code
-                            </Typography>
+                            <Link to='' className={classes.link}>
+                                <Typography className={classes.navItem}>
+                                    Code
+                                </Typography>
+                            </Link>
                         </Grid>
                         <Grid item>
-                            <Typography className={classes.navItem}>
-                                Music
-                            </Typography>
+                            <Link to='/music' className={classes.link}>
+                                <Typography className={classes.navItem}>
+                                    Music
+                                </Typography>
+                            </Link>
                         </Grid>
                         <Grid item>
-                            <Typography className={classes.navItem}>
-                                Analog Photography
-                            </Typography>
+                            <Link to='' className={classes.link}>
+                                <Typography className={classes.navItem}>
+                                    Analog Photography
+                                </Typography>
+                            </Link>
                         </Grid>
                     </Grid>
                 </Grid>
