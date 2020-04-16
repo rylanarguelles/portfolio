@@ -3,8 +3,8 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import red from '@material-ui/core/colors/red';
 import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
 import MusicController from '../../../../controllers/music';
@@ -16,6 +16,11 @@ const styles = (theme) => ({
     },
     text: {
         color: grey[900],
+        fontFamily: 'Butler',
+        fontWeight: 'bold',
+    },
+    buttonText: {
+        color: red[800],
         fontFamily: 'Butler',
         fontWeight: 'bold',
     },
@@ -56,23 +61,14 @@ class SongCard extends React.Component {
                     ></iframe>
                 </CardContent>
                 <CardActions>
-                    <Grid
-                        container
-                        direction='row'
-                        spacing={2}
-                        alignItems='center'
-                    >
-                        <Grid item>
-                            <Button onClick={openDialog}>
-                                <Typography
-                                    variant='overline'
-                                    className={classes.text}
-                                >
-                                    Learn More
-                                </Typography>
-                            </Button>
-                        </Grid>
-                    </Grid>
+                    <Button onClick={openDialog}>
+                        <Typography
+                            variant='overline'
+                            className={classes.buttonText}
+                        >
+                            Learn More
+                        </Typography>
+                    </Button>
                 </CardActions>
             </Card>
         );

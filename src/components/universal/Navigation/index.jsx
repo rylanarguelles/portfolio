@@ -2,11 +2,18 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
+import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
 
 const styles = (theme) => ({
     navItem: {
+        color: grey[900],
+        fontFamily: 'Butler',
+        fontWeight: 'bold',
+        cursor: 'pointer',
+    },
+    title: {
         color: red[800],
         fontFamily: 'Butler',
         fontWeight: 'bold',
@@ -23,7 +30,7 @@ class Navigation extends React.Component {
         return (
             <Grid container direction='column' spacing={2}>
                 <Grid item>
-                    <Typography variant='h4' className={classes.navItem}>
+                    <Typography variant='h4' className={classes.title}>
                         O. R. ARGUELLES
                     </Typography>
                 </Grid>
@@ -37,7 +44,7 @@ class Navigation extends React.Component {
                             </Link>
                         </Grid>
                         <Grid item>
-                            <Link to='' className={classes.link}>
+                            <Link to='/code' className={classes.link}>
                                 <Typography className={classes.navItem}>
                                     Code
                                 </Typography>

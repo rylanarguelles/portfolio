@@ -2,12 +2,18 @@ import React from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
+import red from '@material-ui/core/colors/red';
 import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
 
 const styles = (theme) => ({
     text: {
         color: grey[900],
+        fontFamily: 'Butler',
+        fontWeight: 'bold',
+    },
+    link: {
+        color: red[800],
         fontFamily: 'Butler',
         fontWeight: 'bold',
     },
@@ -21,7 +27,7 @@ class ReferenceRow extends React.Component {
                 <TableCell>
                     <Typography>
                         <a
-                            className={classes.text}
+                            className={classes.link}
                             href='https://www.soundcloud.com'
                         >
                             Drum Track
