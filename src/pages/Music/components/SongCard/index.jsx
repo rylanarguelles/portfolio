@@ -26,7 +26,7 @@ const styles = (theme) => ({
 
 class SongCard extends React.Component {
     render() {
-        const { song, classes } = this.props;
+        const { song, openDialog, classes } = this.props;
         return (
             <Card variant='outlined' className={classes.card}>
                 <CardContent>
@@ -53,7 +53,7 @@ class SongCard extends React.Component {
                             </IconButton>
                         </Grid>
                         <Grid item>
-                            <Button>
+                            <Button onClick={openDialog}>
                                 <Typography
                                     variant='overline'
                                     className={classes.text}
