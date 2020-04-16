@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Home from './pages/Home';
+// import Home from './pages/Home';
+import Music from './pages/Music';
 import Navigation from './components/universal/Navigation';
 import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
@@ -24,7 +25,8 @@ class App extends React.Component {
                 <br></br>
                 <br></br>
                 <Grid item>
-                    <Home />
+                    {/* <Home /> */}
+                    <Music />
                 </Grid>
             </Grid>
         );
