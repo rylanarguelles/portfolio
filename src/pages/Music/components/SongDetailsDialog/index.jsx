@@ -5,12 +5,13 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
 
 const styles = (theme) => ({
-    dialog: {
+    details: {
         backgroundColor: grey[800],
     },
     text: {
@@ -24,54 +25,60 @@ const styles = (theme) => ({
 
 class SongDetailsDialog extends React.Component {
     render() {
-        const { song, isOpen, classes } = this.props;
+        const { activeSong, isOpen, close, classes } = this.props;
         return (
-            <Dialog maxWidth='md' open={isOpen} className={classes.dialog}>
-                <DialogTitle className={classes.text}>
-                    Paperback Writer
-                </DialogTitle>
-                <DialogContent dividers>
-                    <Grid container direction='column' spacing={2}>
-                        <Grid item container direction='column' spacing={2}>
-                            <Grid item>
-                                <Typography
-                                    variant='overline'
-                                    className={classes.text}
-                                >
-                                    Sounds & Instruments
-                                </Typography>
-                            </Grid>
-                            <Grid item>{/* SoundsTable */}</Grid>
-                        </Grid>
-                        <Grid item>
-                            <Typography className={classes.text}>
-                                {/* Description */}
-                            </Typography>
-                        </Grid>
-                        <Grid item container direction='column' spacing={2}>
-                            <Grid item>
-                                <Typography
-                                    variant='overline'
-                                    className={classes.text}
-                                >
-                                    Lyrics
-                                </Typography>
+            <Dialog maxWidth='sm' fullWidth open={isOpen} onClose={close}>
+                <Paper className={classes.details}>
+                    <DialogTitle className={classes.text}>
+                        Paperback Writer
+                    </DialogTitle>
+                    <DialogContent dividers>
+                        <Grid container direction='column' spacing={2}>
+                            <Grid item container direction='column' spacing={2}>
+                                <Grid item>
+                                    <Typography
+                                        variant='overline'
+                                        className={classes.text}
+                                    >
+                                        Sounds & Instruments
+                                    </Typography>
+                                </Grid>
+                                <Grid item>{/* SoundsTable */}</Grid>
                             </Grid>
                             <Grid item>
                                 <Typography className={classes.text}>
-                                    {/* Lyrics */}
+                                    This is a sample description. Not much will
+                                    be here.
                                 </Typography>
                             </Grid>
+                            <Grid item container direction='column' spacing={2}>
+                                <Grid item>
+                                    <Typography
+                                        variant='overline'
+                                        className={classes.text}
+                                    >
+                                        Lyrics
+                                    </Typography>
+                                </Grid>
+                                <Grid item>
+                                    <Typography className={classes.text}>
+                                        {/* Lyrics */}
+                                    </Typography>
+                                </Grid>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </DialogContent>
-                <DialogActions>
-                    <Button>
-                        <Typography variant='overline' className={classes.text}>
-                            Close
-                        </Typography>
-                    </Button>
-                </DialogActions>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={close}>
+                            <Typography
+                                variant='overline'
+                                className={classes.text}
+                            >
+                                Close
+                            </Typography>
+                        </Button>
+                    </DialogActions>
+                </Paper>
             </Dialog>
         );
     }
