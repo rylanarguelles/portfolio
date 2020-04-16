@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
+import MusicController from '../../../../controllers/music';
 
 const styles = (theme) => ({
     card: {
@@ -21,6 +22,16 @@ const styles = (theme) => ({
 });
 
 class SongCard extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.setActiveSong = this.setActiveSong.bind(this);
+    }
+
+    setActiveSong(song) {
+        MusicController.setActiveSong(song);
+    }
+
     render() {
         const { song, openDialog, classes } = this.props;
         return (
