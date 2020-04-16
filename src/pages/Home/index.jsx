@@ -21,6 +21,8 @@ export default class Home extends React.Component {
                 <Grid item>
                     <Links />
                 </Grid>
+                <br></br>
+                <br></br>
             </Grid>
         );
     }
