@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
+import Divider from '@material-ui/core/Divider';
 // import Home from './pages/Home';
 import Music from './pages/Music';
 import Navigation from './components/universal/Navigation';
@@ -8,7 +8,7 @@ import { withStyles } from '@material-ui/styles';
 
 const styles = (theme) => ({
     root: {
-        height: '100vh',
+        height: '100%',
         padding: '64px',
         backgroundColor: grey[50],
     },
@@ -18,17 +18,16 @@ class App extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            <Grid container direction='column' className={classes.root}>
-                <Grid item>
-                    <Navigation />
-                </Grid>
+            <div className={classes.root}>
+                <Navigation />
                 <br></br>
                 <br></br>
-                <Grid item>
-                    {/* <Home /> */}
-                    <Music />
-                </Grid>
-            </Grid>
+                <Divider />
+                <br></br>
+                <br></br>
+                {/* <Home /> */}
+                <Music />
+            </div>
         );
     }
 }

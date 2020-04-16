@@ -25,7 +25,7 @@ class Music extends React.Component {
         const { MusicStore } = this.props;
         const { activeSong } = MusicStore;
         return (
-            <Grid container direction='row' spacing={4}>
+            <Grid container direction='row' spacing={4} justify='flex-start'>
                 <Grid item>
                     <SongCard openDialog={this.toggleSongDetailsDialog} />
                 </Grid>

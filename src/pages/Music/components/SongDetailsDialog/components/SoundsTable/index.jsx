@@ -37,11 +37,7 @@ class SoundsTable extends React.Component {
                                 Effects
                             </Typography>
                         </TableCell>
-                        <TableCell>
-                            <Typography className={classes.text}>
-                                Live
-                            </Typography>
-                        </TableCell>
+                        <TableCell></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

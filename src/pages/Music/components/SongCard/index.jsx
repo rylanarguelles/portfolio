@@ -4,24 +4,19 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import Typography from '@material-ui/core/Typography';
 import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
 
 const styles = (theme) => ({
     card: {
-        width: 240,
+        width: 302,
         backgroundColor: grey[200],
     },
     text: {
         color: grey[900],
         fontFamily: 'Butler',
         fontWeight: 'bold',
-    },
-    icon: {
-        color: grey[900],
     },
 });
 
@@ -40,6 +35,14 @@ class SongCard extends React.Component {
                     <Typography variant='overline' className={classes.text}>
                         The Beatles
                     </Typography>
+                    <iframe
+                        width='100%'
+                        height='166'
+                        scrolling='no'
+                        frameborder='no'
+                        allow='autoplay'
+                        src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/340583320&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true'
+                    ></iframe>
                 </CardContent>
                 <CardActions>
                     <Grid
@@ -48,11 +51,6 @@ class SongCard extends React.Component {
                         spacing={2}
                         alignItems='center'
                     >
-                        <Grid item>
-                            <IconButton className={classes.icon}>
-                                <PlayArrowIcon />
-                            </IconButton>
-                        </Grid>
                         <Grid item>
                             <Button onClick={openDialog}>
                                 <Typography
