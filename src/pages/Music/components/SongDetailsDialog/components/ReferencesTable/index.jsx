@@ -40,10 +40,9 @@ class ReferencesTable extends React.Component {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    <ReferenceRow />
-                    <ReferenceRow />
-                    <ReferenceRow />
-                    <ReferenceRow />
+                    {references.map((r) => (
+                        <ReferenceRow key={r.name} reference={r} />
+                    ))}
                 </TableBody>
             </Table>
         );

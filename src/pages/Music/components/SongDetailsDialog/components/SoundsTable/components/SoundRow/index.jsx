@@ -20,17 +20,17 @@ class SoundRow extends React.Component {
             <TableRow>
                 <TableCell>
                     <Typography className={classes.text}>
-                        Squier Bullet Telecaster
+                        {sound.instrument}
                     </Typography>
                 </TableCell>
                 <TableCell>
                     <Typography className={classes.text}>
-                        Vox Amplug 2 Blues
+                        {sound.effects}
                     </Typography>
                 </TableCell>
                 <TableCell>
                     <Typography variant='overline' className={classes.text}>
-                        Live
+                        {sound.live ? 'Live' : 'Simulated'}
                     </Typography>
                 </TableCell>
             </TableRow>

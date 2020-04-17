@@ -41,27 +41,34 @@ class SongDetailsDialog extends React.Component {
                 <Paper className={classes.details}>
                     <DialogTitle>
                         <Typography variant='h4' className={classes.title}>
-                            Paperback Writer
+                            {activeSong.title}
                         </Typography>
                     </DialogTitle>
                     <DialogContent dividers>
                         <Grid container direction='column' spacing={2}>
                             <Grid item>
                                 <Typography className={classes.text}>
-                                    This is a sample description. Not much will
-                                    be here.
+                                    {activeSong.description}
                                 </Typography>
                             </Grid>
                             <Grid item>
                                 <DetailPanel
                                     title='Sounds & Instruments'
-                                    component={<SoundsTable />}
+                                    component={
+                                        <SoundsTable
+                                            sounds={activeSong.sounds}
+                                        />
+                                    }
                                 />
                             </Grid>
                             <Grid item>
                                 <DetailPanel
                                     title='References'
-                                    component={<ReferencesTable />}
+                                    component={
+                                        <ReferencesTable
+                                            references={activeSong.references}
+                                        />
+                                    }
                                 />
                             </Grid>
                         </Grid>

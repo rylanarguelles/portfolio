@@ -41,10 +41,9 @@ class SoundsTable extends React.Component {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    <SoundRow />
-                    <SoundRow />
-                    <SoundRow />
-                    <SoundRow />
+                    {sounds.map((s) => (
+                        <SoundRow key={s.instrument} sound={s} />
+                    ))}
                 </TableBody>
             </Table>
         );

@@ -26,17 +26,14 @@ class ReferenceRow extends React.Component {
             <TableRow>
                 <TableCell>
                     <Typography>
-                        <a
-                            className={classes.link}
-                            href='https://www.soundcloud.com'
-                        >
-                            Drum Track
+                        <a className={classes.link} href={reference.link}>
+                            {reference.name}
                         </a>
                     </Typography>
                 </TableCell>
                 <TableCell>
                     <Typography className={classes.text}>
-                        Beatles Vocals Dude
+                        {reference.creator}
                     </Typography>
                 </TableCell>
             </TableRow>
