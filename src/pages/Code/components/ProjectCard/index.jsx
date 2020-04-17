@@ -32,18 +32,18 @@ class ProjectCard extends React.Component {
             <Card variant='outlined' className={classes.card}>
                 <CardContent>
                     <Typography variant='caption' className={classes.text}>
-                        Front-end Development
+                        {project.role}
                     </Typography>
                     <Typography variant='h6' className={classes.text}>
-                        Falcon
+                        {project.name}
                     </Typography>
                     <Typography variant='caption' className={classes.text}>
-                        2019
+                        {project.year}
                     </Typography>
                     <br />
                     <br />
                     <Typography className={classes.text}>
-                        This is a short description. Not much will appear here.
+                        {project.description}
                     </Typography>
                 </CardContent>
                 <CardActions>
