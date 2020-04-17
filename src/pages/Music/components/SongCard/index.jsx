@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
-import MusicController from '../../../../controllers/music';
 
 const styles = (theme) => ({
     card: {
@@ -27,29 +26,19 @@ const styles = (theme) => ({
 });
 
 class SongCard extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.setActiveSong = this.setActiveSong.bind(this);
-    }
-
-    setActiveSong(song) {
-        MusicController.setActiveSong(song);
-    }
-
     render() {
         const { song, openDialog, classes } = this.props;
         return (
             <Card variant='outlined' className={classes.card}>
                 <CardContent>
                     <Typography variant='caption' className={classes.text}>
-                        20 April 2020
+                        {song.uploadDate}
                     </Typography>
                     <Typography variant='h6' className={classes.text}>
-                        Paperback Writer
+                        {song.title}
                     </Typography>
                     <Typography variant='overline' className={classes.text}>
-                        The Beatles
+                        {song.artist}
                     </Typography>
                     <iframe
                         width='100%'
@@ -57,7 +46,7 @@ class SongCard extends React.Component {
                         scrolling='no'
                         frameborder='no'
                         allow='autoplay'
-                        src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/340583320&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true'
+                        src={song.url}
                     ></iframe>
                 </CardContent>
                 <CardActions>
