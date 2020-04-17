@@ -13,7 +13,7 @@ export default class Education {
         this.id = education.id;
         this.title = education.title;
         this.institution = education.institution;
-        this.graduationYear = education.graduationYear;
+        this.graduationYear = education.graduation_year;
     }
 }
 
