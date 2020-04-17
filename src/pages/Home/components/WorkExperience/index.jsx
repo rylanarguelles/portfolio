@@ -1,8 +1,9 @@
-import React from 'react';
+import grey from '@material-ui/core/colors/grey';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
+import React from 'react';
+import ItemView from '../ItemView';
 
 const styles = (theme) => ({
     root: {
@@ -17,7 +18,8 @@ const styles = (theme) => ({
 
 class WorkExperience extends React.Component {
     render() {
-        const { classes } = this.props;
+        const { experienceItems, classes } = this.props;
+        const items = experienceItems ? Array.from(experienceItems) : [];
         return (
             <Grid
                 container
@@ -31,36 +33,15 @@ class WorkExperience extends React.Component {
                     </Typography>
                 </Grid>
                 <Grid item container spacing={3}>
-                    <Grid item container direction='column'>
-                        <Grid item>
-                            <Typography className={classes.text}>
-                                Letter Automation Project Managment Officer
-                            </Typography>
-                        </Grid>
-                        <Grid item>
-                            <Typography
-                                variant='overline'
-                                className={classes.text}
-                            >
-                                Unilever 2019
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                    <Grid item container direction='column'>
-                        <Grid item>
-                            <Typography className={classes.text}>
-                                Full Stack Web Developer Intern
-                            </Typography>
-                        </Grid>
-                        <Grid item>
-                            <Typography
-                                variant='overline'
-                                className={classes.text}
-                            >
-                                Qwikwire Billing Systems, Inc.
-                            </Typography>
-                        </Grid>
-                    </Grid>
+                    {items.length > 0 &&
+                        items.map((i) => (
+                            <Grid item key={i.id}>
+                                <ItemView
+                                    title={i.position}
+                                    details={`${i.company} ${i.year}`}
+                                />
+                            </Grid>
+                        ))}
                 </Grid>
             </Grid>
         );
