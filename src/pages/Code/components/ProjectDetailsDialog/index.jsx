@@ -40,7 +40,7 @@ class ProjectDetailsDialog extends React.Component {
                 <Paper className={classes.details}>
                     <DialogTitle>
                         <Typography variant='h4' className={classes.title}>
-                            Falcon
+                            {activeProject.name}
                         </Typography>
                     </DialogTitle>
                     <DialogContent dividers>
