@@ -7,6 +7,10 @@ import ProjectDetailsDialog from './components/ProjectDetailsDialog';
 import CodeController from '../../controllers/code';
 
 class Code extends React.Component {
+    componentDidMount() {
+        // TODO: Service for retrieving projects
+    }
+
     constructor(props) {
         super(props);
 
