@@ -1,8 +1,10 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
+import EmptyState from '../../components/reusable/EmptyState';
 import Grid from '@material-ui/core/Grid';
 import ProjectCard from './components/ProjectCard';
 import ProjectDetailsDialog from './components/ProjectDetailsDialog';
+import CodeController from '../../controllers/code';
 
 class Code extends React.Component {
     constructor(props) {
@@ -17,41 +19,47 @@ class Code extends React.Component {
         );
     }
 
-    toggleProjectDetailsDialog() {
+    toggleProjectDetailsDialog(project) {
         this.setState({
             detailsIsOpen: !this.state.detailsIsOpen,
         });
+        CodeController.setActiveProject(project);
     }
 
     render() {
         const { CodeStore } = this.props;
-        const { activeProject } = CodeStore;
+        const { projects, activeProject } = CodeStore;
+        const items = projects ? Array.from(projects) : [];
         return (
-            <Grid container direction='row' spacing={4} justify='flex-start'>
-                <Grid item>
-                    <ProjectCard openDialog={this.toggleProjectDetailsDialog} />
-                </Grid>
-                <Grid item>
-                    <ProjectCard openDialog={this.toggleProjectDetailsDialog} />
-                </Grid>
-                <Grid item>
-                    <ProjectCard openDialog={this.toggleProjectDetailsDialog} />
-                </Grid>
-                <Grid item>
-                    <ProjectCard openDialog={this.toggleProjectDetailsDialog} />
-                </Grid>
-                <Grid item>
-                    <ProjectCard openDialog={this.toggleProjectDetailsDialog} />
-                </Grid>
-                <Grid item>
-                    <ProjectCard openDialog={this.toggleProjectDetailsDialog} />
-                </Grid>
-                <ProjectDetailsDialog
-                    activeProject={activeProject}
-                    isOpen={this.state.detailsIsOpen}
-                    close={this.toggleProjectDetailsDialog}
-                />
-            </Grid>
+            <React.Fragment>
+                {items.length > 0 && (
+                    <Grid
+                        container
+                        direction='row'
+                        spacing={4}
+                        justify='flex-start'
+                    >
+                        {items.map((i) => (
+                            <Grid item key={i.id}>
+                                <ProjectCard
+                                    project={i}
+                                    openDialog={() =>
+                                        this.toggleProjectDetailsDialog(i)
+                                    }
+                                />
+                            </Grid>
+                        ))}
+                        <ProjectDetailsDialog
+                            activeProject={activeProject}
+                            isOpen={this.state.detailsIsOpen}
+                            close={() =>
+                                this.toggleProjectDetailsDialog(undefined)
+                            }
+                        />
+                    </Grid>
+                )}
+                {items.length === 0 && <EmptyState />}
+            </React.Fragment>
         );
     }
 }
