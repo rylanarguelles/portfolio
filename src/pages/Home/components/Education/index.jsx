@@ -17,7 +17,7 @@ const styles = (theme) => ({
 
 class Education extends React.Component {
     render() {
-        const { classes } = this.props;
+        const { educationItems, classes } = this.props;
         return (
             <Grid
                 container
