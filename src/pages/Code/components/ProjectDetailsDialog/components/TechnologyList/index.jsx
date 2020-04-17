@@ -16,18 +16,11 @@ class TechnologyList extends React.Component {
         const { technologies, classes } = this.props;
         return (
             <Grid container direction='row' spacing={2}>
-                <Grid item>
-                    <Chip label='React' className={classes.chip} />
-                </Grid>
-                <Grid item>
-                    <Chip label='Material UI' className={classes.chip} />
-                </Grid>
-                <Grid item>
-                    <Chip label='Mobx' className={classes.chip} />
-                </Grid>
-                <Grid item>
-                    <Chip label='Axios' className={classes.chip} />
-                </Grid>
+                {technologies.map((t) => (
+                    <Grid item key={t.name}>
+                        <Chip label={t.name} className={classes.chip} />
+                    </Grid>
+                ))}
             </Grid>
         );
     }
