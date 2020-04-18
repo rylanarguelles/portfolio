@@ -24,7 +24,6 @@ class App extends React.Component {
                 <div className={classes.root}>
                     <Navigation />
                     <br></br>
-                    <br></br>
                     <Divider />
                     <br></br>
                     <br></br>
