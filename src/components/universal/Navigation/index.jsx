@@ -1,10 +1,11 @@
 import React from 'react';
+import AdminSignInButton from './components/AdminSignInButton';
 import Grid from '@material-ui/core/Grid';
+import NavLink from './components/NavLink';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import grey from '@material-ui/core/colors/grey';
 import { withStyles } from '@material-ui/styles';
-import { Link } from 'react-router-dom';
 
 const styles = (theme) => ({
     navItem: {
@@ -28,42 +29,40 @@ class Navigation extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            <Grid container direction='column' spacing={2}>
+            <Grid container direction='column' spacing={1}>
                 <Grid item>
                     <Typography variant='h4' className={classes.title}>
                         O. R. ARGUELLES
                     </Typography>
                 </Grid>
-                <Grid item>
-                    <Grid container direction='row' spacing={4}>
-                        <Grid item>
-                            <Link to='/home' className={classes.link}>
-                                <Typography className={classes.navItem}>
-                                    Home
-                                </Typography>
-                            </Link>
+                <Grid
+                    item
+                    container
+                    direction='row'
+                    justify='space-between'
+                    alignItems='center'
+                >
+                    <Grid item>
+                        <Grid container direction='row' spacing={4}>
+                            <Grid item>
+                                <NavLink title='Home' route='/home' />
+                            </Grid>
+                            <Grid item>
+                                <NavLink title='Code' route='/code' />
+                            </Grid>
+                            <Grid item>
+                                <NavLink title='Music' route='/music' />
+                            </Grid>
+                            <Grid item>
+                                <NavLink
+                                    title='Analog Photgraphy'
+                                    route='/home'
+                                />
+                            </Grid>
                         </Grid>
-                        <Grid item>
-                            <Link to='/code' className={classes.link}>
-                                <Typography className={classes.navItem}>
-                                    Code
-                                </Typography>
-                            </Link>
-                        </Grid>
-                        <Grid item>
-                            <Link to='/music' className={classes.link}>
-                                <Typography className={classes.navItem}>
-                                    Music
-                                </Typography>
-                            </Link>
-                        </Grid>
-                        <Grid item>
-                            <Link to='' className={classes.link}>
-                                <Typography className={classes.navItem}>
-                                    Analog Photography
-                                </Typography>
-                            </Link>
-                        </Grid>
+                    </Grid>
+                    <Grid item>
+                        <AdminSignInButton />
                     </Grid>
                 </Grid>
             </Grid>
