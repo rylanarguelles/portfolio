@@ -1,5 +1,6 @@
 import React from 'react';
 import AdminSignInButton from './components/AdminSignInButton';
+import AdminSignInDialog from '../AdminSignInDialog';
 import Grid from '@material-ui/core/Grid';
 import NavLink from './components/NavLink';
 import Typography from '@material-ui/core/Typography';
@@ -26,6 +27,27 @@ const styles = (theme) => ({
 });
 
 class Navigation extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            signInIsOpen: false,
+        };
+
+        this.handleSignIn = this.handleSignIn.bind(this);
+        this.toggleSignInDialog = this.toggleSignInDialog.bind(this);
+    }
+
+    handleSignIn() {
+        this.toggleSignInDialog();
+    }
+
+    toggleSignInDialog() {
+        this.setState({
+            signInIsOpen: !this.state.signInIsOpen,
+        });
+    }
+
     render() {
         const { classes } = this.props;
         return (
@@ -62,9 +84,15 @@ class Navigation extends React.Component {
                         </Grid>
                     </Grid>
                     <Grid item>
-                        <AdminSignInButton />
+                        <AdminSignInButton
+                            openDialog={this.toggleSignInDialog}
+                        />
                     </Grid>
                 </Grid>
+                <AdminSignInDialog
+                    isOpen={this.state.signInIsOpen}
+                    close={this.toggleSignInDialog}
+                />
             </Grid>
         );
     }
