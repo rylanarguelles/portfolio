@@ -53,14 +53,14 @@ class AdminSpeedDial extends React.Component {
                 onClose={this.toggleDial}
             >
                 <SpeedDialAction
-                    icon={<AddIcon />}
-                    tooltipTitle={addTitle}
-                    onClick={handleAdd}
-                />
-                <SpeedDialAction
                     icon={<DeleteIcon />}
                     tooltipTitle={deleteTitle}
                     onClick={handleDelete}
+                />
+                <SpeedDialAction
+                    icon={<AddIcon />}
+                    tooltipTitle={addTitle}
+                    onClick={handleAdd}
                 />
             </SpeedDial>
         );
