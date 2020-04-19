@@ -4,7 +4,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-import red from '@material-ui/core/colors/red';
 import { withStyles } from '@material-ui/styles';
 
 const styles = (theme) => ({
@@ -37,7 +36,6 @@ class AdminSpeedDial extends React.Component {
             hidden,
             addTitle,
             handleAdd,
-            deleteTitle,
             handleDelete,
             classes,
         } = this.props;
@@ -54,7 +52,7 @@ class AdminSpeedDial extends React.Component {
             >
                 <SpeedDialAction
                     icon={<DeleteIcon />}
-                    tooltipTitle={deleteTitle}
+                    tooltipTitle='Remove Items'
                     onClick={handleDelete}
                 />
                 <SpeedDialAction
