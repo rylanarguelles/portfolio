@@ -1,5 +1,6 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
+import AdminSpeedDial from '../../components/reusable/AdminSpeedDial';
 import Grid from '@material-ui/core/Grid';
 import Education from './components/Education';
 import Links from './components/Links';
@@ -28,6 +29,7 @@ class Home extends React.Component {
                 <Grid item>
                     <Links />
                 </Grid>
+                <AdminSpeedDial />
             </Grid>
         );
     }

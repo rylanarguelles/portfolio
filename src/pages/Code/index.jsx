@@ -1,5 +1,6 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
+import AdminSpeedDial from '../../components/reusable/AdminSpeedDial';
 import EmptyState from '../../components/reusable/EmptyState';
 import Grid from '@material-ui/core/Grid';
 import ProjectCard from './components/ProjectCard';
@@ -63,6 +64,7 @@ class Code extends React.Component {
                     </Grid>
                 )}
                 {items.length === 0 && <EmptyState />}
+                <AdminSpeedDial />
             </React.Fragment>
         );
     }
